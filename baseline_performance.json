@@ -1,0 +1,616 @@
+{
+  "timestamp": "2026-02-16T22:57:47.378655",
+  "metrics": {
+    "total_queries": 54,
+    "successful_queries": 54,
+    "failed_queries": 0,
+    "cache_hits": 0,
+    "cache_hit_rate": 0.0,
+    "avg_latency": 218.07,
+    "median_latency": 192.88,
+    "min_latency": 154.24,
+    "max_latency": 400.03,
+    "p50_latency": 193.0,
+    "p75_latency": 233.48,
+    "p90_latency": 309.22,
+    "p95_latency": 363.09,
+    "p99_latency": 400.03,
+    "std_dev": 61.11
+  },
+  "detailed_results": [
+    {
+      "question": "What is the EC identification number?",
+      "status": "success",
+      "client_latency": 194.59271430969238,
+      "server_latency": 192.58737564086914,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 192.58737564086914
+      }
+    },
+    {
+      "question": "What is the file number?",
+      "status": "success",
+      "client_latency": 330.5964469909668,
+      "server_latency": 330.5964469909668,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 330.5964469909668
+      }
+    },
+    {
+      "question": "What is the name of the company?",
+      "status": "success",
+      "client_latency": 195.39642333984375,
+      "server_latency": 193.38750839233398,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 193.38750839233398
+      }
+    },
+    {
+      "question": "Which sector is the project located in?",
+      "status": "success",
+      "client_latency": 180.9840202331543,
+      "server_latency": 180.0994873046875,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 180.0994873046875
+      }
+    },
+    {
+      "question": "What is the total cost of the project?",
+      "status": "success",
+      "client_latency": 231.49704933166504,
+      "server_latency": 231.49704933166504,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 231.49704933166504
+      }
+    },
+    {
+      "question": "What is the total plot area?",
+      "status": "success",
+      "client_latency": 275.07781982421875,
+      "server_latency": 271.0602283477783,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 271.0602283477783
+      }
+    },
+    {
+      "question": "What is the total built-up area?",
+      "status": "success",
+      "client_latency": 405.470609664917,
+      "server_latency": 400.03252029418945,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 400.03252029418945
+      }
+    },
+    {
+      "question": "What is the total water requirement?",
+      "status": "success",
+      "client_latency": 185.6863498687744,
+      "server_latency": 185.6863498687744,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 185.6863498687744
+      }
+    },
+    {
+      "question": "What is the fresh water demand?",
+      "status": "success",
+      "client_latency": 236.2987995147705,
+      "server_latency": 233.48426818847656,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 232.48624801635742
+      }
+    },
+    {
+      "question": "What is the STP capacity?",
+      "status": "success",
+      "client_latency": 183.90274047851562,
+      "server_latency": 180.8943748474121,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 180.8943748474121
+      }
+    },
+    {
+      "question": "What is the total waste water?",
+      "status": "success",
+      "client_latency": 235.60476303100586,
+      "server_latency": 231.77480697631836,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 231.77480697631836
+      }
+    },
+    {
+      "question": "What is the total proposed green area?",
+      "status": "success",
+      "client_latency": 191.60056114196777,
+      "server_latency": 189.59522247314453,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 189.59522247314453
+      }
+    },
+    {
+      "question": "What is the total power requirement?",
+      "status": "success",
+      "client_latency": 310.2872371673584,
+      "server_latency": 307.2795867919922,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 307.2795867919922
+      }
+    },
+    {
+      "question": "What is the capacity of backup DG sets?",
+      "status": "success",
+      "client_latency": 393.887996673584,
+      "server_latency": 392.3077583312988,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 392.3077583312988
+      }
+    },
+    {
+      "question": "What is the total solid waste generation?",
+      "status": "success",
+      "client_latency": 364.6841049194336,
+      "server_latency": 363.0943298339844,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 363.0943298339844
+      }
+    },
+    {
+      "question": "How many rain water harvesting pits are proposed?",
+      "status": "success",
+      "client_latency": 237.20550537109375,
+      "server_latency": 233.85071754455566,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 233.85071754455566
+      }
+    },
+    {
+      "question": "How many parking spaces are provided?",
+      "status": "success",
+      "client_latency": 221.24528884887695,
+      "server_latency": 217.3023223876953,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 217.3023223876953
+      }
+    },
+    {
+      "question": "How many trees are proposed?",
+      "status": "success",
+      "client_latency": 189.2545223236084,
+      "server_latency": 187.25347518920898,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 187.25347518920898
+      }
+    },
+    {
+      "question": "What is the EC identification number?",
+      "status": "success",
+      "client_latency": 186.89322471618652,
+      "server_latency": 184.27228927612305,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 184.27228927612305
+      }
+    },
+    {
+      "question": "What is the file number?",
+      "status": "success",
+      "client_latency": 205.86013793945312,
+      "server_latency": 203.35793495178223,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 203.35793495178223
+      }
+    },
+    {
+      "question": "What is the name of the company?",
+      "status": "success",
+      "client_latency": 189.70155715942383,
+      "server_latency": 187.9863739013672,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 187.9863739013672
+      }
+    },
+    {
+      "question": "Which sector is the project located in?",
+      "status": "success",
+      "client_latency": 178.40290069580078,
+      "server_latency": 176.04398727416992,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 176.04398727416992
+      }
+    },
+    {
+      "question": "What is the total cost of the project?",
+      "status": "success",
+      "client_latency": 173.20632934570312,
+      "server_latency": 171.19956016540527,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 171.19956016540527
+      }
+    },
+    {
+      "question": "What is the total plot area?",
+      "status": "success",
+      "client_latency": 221.5263843536377,
+      "server_latency": 218.51611137390137,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 218.51611137390137
+      }
+    },
+    {
+      "question": "What is the total built-up area?",
+      "status": "success",
+      "client_latency": 197.39389419555664,
+      "server_latency": 196.38729095458984,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 196.38729095458984
+      }
+    },
+    {
+      "question": "What is the total water requirement?",
+      "status": "success",
+      "client_latency": 160.34483909606934,
+      "server_latency": 156.59332275390625,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 156.59332275390625
+      }
+    },
+    {
+      "question": "What is the fresh water demand?",
+      "status": "success",
+      "client_latency": 154.2363166809082,
+      "server_latency": 154.2363166809082,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 154.2363166809082
+      }
+    },
+    {
+      "question": "What is the STP capacity?",
+      "status": "success",
+      "client_latency": 164.2751693725586,
+      "server_latency": 160.26592254638672,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 160.26592254638672
+      }
+    },
+    {
+      "question": "What is the total waste water?",
+      "status": "success",
+      "client_latency": 190.89388847351074,
+      "server_latency": 185.82963943481445,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 185.82963943481445
+      }
+    },
+    {
+      "question": "What is the total proposed green area?",
+      "status": "success",
+      "client_latency": 186.77830696105957,
+      "server_latency": 184.7705841064453,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 184.7705841064453
+      }
+    },
+    {
+      "question": "What is the total power requirement?",
+      "status": "success",
+      "client_latency": 283.51736068725586,
+      "server_latency": 281.4974784851074,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 281.4974784851074
+      }
+    },
+    {
+      "question": "What is the capacity of backup DG sets?",
+      "status": "success",
+      "client_latency": 312.96801567077637,
+      "server_latency": 309.2188835144043,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 309.2188835144043
+      }
+    },
+    {
+      "question": "What is the total solid waste generation?",
+      "status": "success",
+      "client_latency": 280.69567680358887,
+      "server_latency": 280.69567680358887,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 280.69567680358887
+      }
+    },
+    {
+      "question": "How many rain water harvesting pits are proposed?",
+      "status": "success",
+      "client_latency": 195.09339332580566,
+      "server_latency": 193.97854804992676,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 193.97854804992676
+      }
+    },
+    {
+      "question": "How many parking spaces are provided?",
+      "status": "success",
+      "client_latency": 186.32197380065918,
+      "server_latency": 186.32197380065918,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 186.32197380065918
+      }
+    },
+    {
+      "question": "How many trees are proposed?",
+      "status": "success",
+      "client_latency": 185.2707862854004,
+      "server_latency": 184.26036834716797,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 184.26036834716797
+      }
+    },
+    {
+      "question": "What is the EC identification number?",
+      "status": "success",
+      "client_latency": 193.00222396850586,
+      "server_latency": 193.00222396850586,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 193.00222396850586
+      }
+    },
+    {
+      "question": "What is the file number?",
+      "status": "success",
+      "client_latency": 209.3832492828369,
+      "server_latency": 207.12614059448242,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 207.12614059448242
+      }
+    },
+    {
+      "question": "What is the name of the company?",
+      "status": "success",
+      "client_latency": 167.6933765411377,
+      "server_latency": 162.6720428466797,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 162.6720428466797
+      }
+    },
+    {
+      "question": "Which sector is the project located in?",
+      "status": "success",
+      "client_latency": 172.5919246673584,
+      "server_latency": 169.5845127105713,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 169.5845127105713
+      }
+    },
+    {
+      "question": "What is the total cost of the project?",
+      "status": "success",
+      "client_latency": 166.98884963989258,
+      "server_latency": 164.98279571533203,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 164.98279571533203
+      }
+    },
+    {
+      "question": "What is the total plot area?",
+      "status": "success",
+      "client_latency": 196.8216896057129,
+      "server_latency": 192.7502155303955,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 192.7502155303955
+      }
+    },
+    {
+      "question": "What is the total built-up area?",
+      "status": "success",
+      "client_latency": 215.15846252441406,
+      "server_latency": 214.14828300476074,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 214.14828300476074
+      }
+    },
+    {
+      "question": "What is the total water requirement?",
+      "status": "success",
+      "client_latency": 160.99023818969727,
+      "server_latency": 160.99023818969727,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 160.99023818969727
+      }
+    },
+    {
+      "question": "What is the fresh water demand?",
+      "status": "success",
+      "client_latency": 160.60757637023926,
+      "server_latency": 160.60757637023926,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 160.60757637023926
+      }
+    },
+    {
+      "question": "What is the STP capacity?",
+      "status": "success",
+      "client_latency": 183.84718894958496,
+      "server_latency": 183.84718894958496,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 183.84718894958496
+      }
+    },
+    {
+      "question": "What is the total waste water?",
+      "status": "success",
+      "client_latency": 182.6164722442627,
+      "server_latency": 182.6164722442627,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 182.6164722442627
+      }
+    },
+    {
+      "question": "What is the total proposed green area?",
+      "status": "success",
+      "client_latency": 180.04608154296875,
+      "server_latency": 178.0397891998291,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 178.0397891998291
+      }
+    },
+    {
+      "question": "What is the total power requirement?",
+      "status": "success",
+      "client_latency": 289.23773765563965,
+      "server_latency": 288.22851181030273,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 288.22851181030273
+      }
+    },
+    {
+      "question": "What is the capacity of backup DG sets?",
+      "status": "success",
+      "client_latency": 314.64672088623047,
+      "server_latency": 313.04430961608887,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 313.04430961608887
+      }
+    },
+    {
+      "question": "What is the total solid waste generation?",
+      "status": "success",
+      "client_latency": 299.67284202575684,
+      "server_latency": 297.6641654968262,
+      "num_results": 5,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 297.6641654968262
+      }
+    },
+    {
+      "question": "How many rain water harvesting pits are proposed?",
+      "status": "success",
+      "client_latency": 200.8833885192871,
+      "server_latency": 199.13792610168457,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 199.13792610168457
+      }
+    },
+    {
+      "question": "How many parking spaces are provided?",
+      "status": "success",
+      "client_latency": 197.53646850585938,
+      "server_latency": 193.94230842590332,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 193.94230842590332
+      }
+    },
+    {
+      "question": "How many trees are proposed?",
+      "status": "success",
+      "client_latency": 176.06878280639648,
+      "server_latency": 176.06878280639648,
+      "num_results": 3,
+      "cache_hit": false,
+      "breakdown": {
+        "vector_search": 176.06878280639648
+      }
+    }
+  ]
+}

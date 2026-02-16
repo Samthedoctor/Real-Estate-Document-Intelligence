@@ -1,0 +1,44 @@
+{
+  "total_queries": 57,
+  "cache_hits": 36,
+  "cache_misses": 21,
+  "cache_hit_rate": 63.16,
+  "all_queries": {
+    "avg_latency": 78.0,
+    "median_latency": 0.0,
+    "p95_latency": 302.11,
+    "p99_latency": 369.92
+  },
+  "cache_hits_only": {
+    "avg_latency": 0.0,
+    "p95_latency": 0.0
+  },
+  "cache_misses_only": {
+    "avg_latency": 211.72,
+    "median_latency": 201.88,
+    "p50_latency": 201.88,
+    "p95_latency": 339.93,
+    "p99_latency": 369.92,
+    "min_latency": 94.7,
+    "max_latency": 369.92,
+    "std_dev": 73.11
+  },
+  "component_breakdown": {
+    "cache_check": {
+      "avg": 0.0,
+      "p95": 0.0
+    },
+    "embedding": {
+      "avg": 0,
+      "p95": 0
+    },
+    "vector_search": {
+      "avg": 211.56,
+      "p95": 339.93
+    },
+    "formatting": {
+      "avg": 0.16,
+      "p95": 0.0
+    }
+  }
+}

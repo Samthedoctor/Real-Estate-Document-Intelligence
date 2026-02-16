@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agimentis | Intelligent Document Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-area">🏢</div>
+            <h1 class="main-title">Real Estate Document Intelligence</h1>
+            <p class="subtitle">AI-Powered Environmental Clearance Search System</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Ask a question (e.g., What is the total water requirement?)"
+                    class="search-input"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span>Search</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+
+            <div class="examples">
+                <span class="examples-label">Try asking:</span>
+                <div class="example-pills">
+                    <button class="example-btn" data-query="What is the EC identification number?">EC ID</button>
+                    <button class="example-btn" data-query="What is the total cost of the project?">Project Cost</button>
+                    <button class="example-btn" data-query="What is the STP capacity?">STP Capacity</button>
+                    <button class="example-btn" data-query="How many parking spaces are provided?">Parking</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Scanning documents & generating answer...</p>
+        </div>
+
+        <div id="metricsContainer" class="metrics-grid hidden">
+            <div class="metric-card">
+                <div class="metric-label">Search Time</div>
+                <div id="searchLatency" class="metric-value">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Server Total</div>
+                <div id="serverLatency" class="metric-value">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Performance</div>
+                <div id="statusIndicator" class="metric-value">-</div>
+            </div>
+            <div id="llmLatency" style="display:none;"></div>
+        </div>
+
+        <div id="answerBox" class="answer-box hidden">
+            <div class="answer-header">
+                <div class="ai-icon">✨</div>
+                <span class="answer-label">AI Generated Answer</span>
+            </div>
+            <div id="answerText" class="answer-text"></div>
+        </div>
+
+        <div id="resultsContainer" class="results-container hidden">
+            <h2 class="section-title">Source Evidence</h2>
+            <div id="resultsList"></div>
+        </div>
+        
+        <div style="display: none;">
+            <span id="totalChunks"></span>
+            <span id="totalDocs"></span>
+        </div>
+        
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+__pycache__/
+chroma_db/
+extracted_data/
+task/
+.env
+agmentis.ipynb
