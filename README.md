@@ -24,13 +24,17 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-### 3. Configure API Key
+### 3. Configure API Key and Index Your Documents
 ```bash
 # Windows (CMD)
 set GROQ_API_KEY=your_groq_api_key_here
 
 # Mac/Linux or Git Bash
 export GROQ_API_KEY=your_groq_api_key_here
+```
+Crucial Step: Before running the search, you must process the PDFs to create the vector database and keyword index. Place your PDF files in the project folder and run:
+``` bash
+python reindex.py
 ```
 ### 4. Run the Application
 Start the FastAPI backend server:
@@ -59,7 +63,7 @@ python accuracy_evaluator.py
 ### 🛠️ Tech Stack
 1) Backend: FastAPI, Python 3.11
 2) Search: ChromaDB (Vector) + BM25 (Keyword)
-3) Models: * Embeddings: all-mpnet-base-v2
+3) Models: Embeddings: all-mpnet-base-v2
 4) Reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
 5) LLM: Llama-3.3-70b-Versatile (via Groq)
 6) Frontend: Vanilla JS, HTML5, CSS3 (Modern Indigo Theme)
@@ -68,4 +72,5 @@ python accuracy_evaluator.py
 1) Hybrid Retrieval: Simultaneous search using ChromaDB for semantic meaning and BM25 for exact keyword matching.
 2) Reranking: top candidates are re-scored using a Cross-Encoder model.
 3) Streaming Generation: LLM generates answers with real-time token streaming to the UI.
+
 
