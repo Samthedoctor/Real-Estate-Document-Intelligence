@@ -288,99 +288,99 @@ class AccuracyEvaluator:
 
 # ==================== GROUND TRUTH TEST CASES (Max Estates 128) ====================
 ACCURACY_TEST_CASES = [
-    # ============ METADATA QUESTIONS ============
+    # ============ METADATA & GENERAL INFO ============
     {
-        'question': 'What is the EC identification number?',
-        'expected_answer': 'EC23B038UP185828',  
+        'question': 'What about rail connectivity with daily trains?',
+        'expected_answer': ' Shatabdi Express, Jan Shatabdi Express and Nanda Devi Express',
         'category': 'metadata'
     },
     {
-        'question': 'What is the file number?',
-        'expected_answer': '7888',  
+        'question': 'How many total residences are there in the 222 Rajpur community?',
+        'expected_answer': '22 bespoke residences',
         'category': 'metadata'
     },
     {
-        'question': 'What is the name of the company?',
-        'expected_answer': 'MAX ESTATES 128 PRIVATE LIMITED',  
+        'question': 'What is the RERA Registration Number for 222 Rajpur?',
+        'expected_answer': 'UKREP08170000001',
         'category': 'metadata'
     },
     {
-        'question': 'Which sector is the project located in?',
-        'expected_answer': 'Sector 128',  
+        'question': 'How many Townhouse units are available?',
+        'expected_answer': '14 Units',
+        'category': 'metadata'
+    },
+    {
+        'question': 'Which forest does the project abut?',
+        'expected_answer': 'Malsi Reserve Forest',
         'category': 'metadata'
     },
 
-    # ============ TABLE/NUMERICAL DATA ============
+    # ============ NUMERICAL / DIMENSIONS ============
     {
-        'question': 'What is the total cost of the project?',
-        'expected_answer': '551.70 crores',  
-        'category': 'table'
+        'question': 'What is the distance to Max Super Speciality Hospital?',
+        'expected_answer': '3.2 km',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the total plot area?',
-        'expected_answer': '40468.5 sqm',  
-        'category': 'table'
+        'question': 'How far is the Jolly Grant Airport from the project?',
+        'expected_answer': '36.9 km (approx 75 minutes)',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the total built-up area?',
-        'expected_answer': '121044.34 sqm',  
-        'category': 'table'
+        'question': 'What is the Built-up Area of a Townhouse unit?',
+        'expected_answer': '3990 sq.ft.',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the total water requirement?',
-        'expected_answer': '257 KLD',  
-        'category': 'table'
+        'question': 'What is the Carpet Area of a Courtyard Villa?',
+        'expected_answer': '3276 sq.ft.',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the fresh water demand?',
-        'expected_answer': '162 KLD',  
-        'category': 'table'
+        'question': 'What is the plot size range for Forest Villas?',
+        'expected_answer': '435-499 sq.m.',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the STP capacity?',
-        'expected_answer': '200 KLD',  
-        'category': 'table'
+        'question': 'What is the ceiling height provided in the residences?',
+        'expected_answer': '10.5 ft',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the total waste water?',
-        'expected_answer': '112 KLD',  
-        'category': 'table'
+        'question': 'How many car parking spaces are provided per residence?',
+        'expected_answer': '2 car parking spaces',
+        'category': 'numerical'
     },
     {
-        'question': 'What is the total proposed green area?',
-        'expected_answer': '16731.0 sqm',  
-        'category': 'table'
+        'question': 'What is the booking amount percentage in the Down Payment Plan?',
+        'expected_answer': '10% of Basic Sales Price',
+        'category': 'numerical'
     },
 
-    # ============ CONTENT/SPECIFICS ============
+    # ============ CONTENT / SPECIFICATIONS ============
     {
-        'question': 'What is the total power requirement?',
-        'expected_answer': '7890 kW',  
+        'question': 'What brand of sanitary fixtures is provided in the bathrooms?',
+        'expected_answer': 'Kohler or equivalent',
         'category': 'content'
     },
     {
-        'question': 'What is the capacity of backup DG sets?',
-        'expected_answer': '4500 kVA',  
+        'question': 'What type of windows are installed in the residences?',
+        'expected_answer': 'Insulated premium windows with double glazed units',
         'category': 'content'
     },
     {
-        'question': 'What is the total solid waste generation?',
-        'expected_answer': '840.2 kg/day',  
+        'question': 'What flooring is used in the bedrooms?',
+        'expected_answer': 'Perlato marble flooring',
         'category': 'content'
     },
     {
-        'question': 'How many rain water harvesting pits are proposed?',
-        'expected_answer': '09 no',  
+        'question': 'What brand of microwave and oven is provided in the kitchen?',
+        'expected_answer': 'Siemens or equivalent',
         'category': 'content'
     },
     {
-        'question': 'How many parking spaces are provided?',
-        'expected_answer': '838 ECS',  
-        'category': 'content'
-    },
-    {
-        'question': 'How many trees are proposed?',
-        'expected_answer': '333', 
+        'question': 'What security systems are available in the community?',
+        'expected_answer': '24x7 monitoring, CCTV cameras, and RFID-based car recognition',
         'category': 'content'
     }
 ]

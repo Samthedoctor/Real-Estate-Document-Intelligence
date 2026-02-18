@@ -22,3 +22,6 @@ python-dotenv
 camelot-py[cv]
 streamlit
 groq
+llama-parse
+llama-index
+setuptools

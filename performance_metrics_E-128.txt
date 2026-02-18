@@ -1,0 +1,129 @@
+(task) D:\agmentis_task>python accuracy_evaluator.py
+
+🎯 Starting Accuracy Evaluation...
+This will test if the system retrieves CORRECT information
+
+======================================================================
+🎯 RUNNING ACCURACY EVALUATION
+======================================================================
+Total test cases: 18
+======================================================================
+
+[1/18] How big is the landscape
+  Expected: 7 acres/28328 sq. m...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[2/18] Can you list some amenities?
+  Expected: 1. Emergency Vehicular access 2. Ramp to Basement 3. Banyan Court 4. Grand Lawn ...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[3/18] How large is deck
+  Expected: 2.75m...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[4/18] What is carpet area of terrace ?
+  Expected: 264 sq. m. / 2840 sq. ft....
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[5/18] How big are terrace suite decks and carpet area?
+  Expected: 3.75m, 264 sq. m. / 2840 sq. ft....
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[6/18] What are external walls in living room made up of?
+  Expected: Combination of Brick tile Cladding + External Grade Weather Resistant paint...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[7/18] Can you tell me about HVAC?
+  Expected: VRV/ VRF AC system in living and dining room and High Wall Split AC in bedrooms...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[8/18] What are hardwares in kitchen?
+  Expected: Blum/Hettich or equivalent...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[9/18] Tell me about railing in balcony
+  Expected: MS railing as per design...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[10/18] What are internal wall and ceilings in bedroom made up of?
+  Expected: Cornice + Acrylic emulsion Paint of appropriate colour...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[11/18] What is fixture and fittings in kitchen made up of?
+  Expected: Modular Kitchen with Granite or engineered stone top & stainless-steel sink...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[12/18] Hardware and locks used in bedroom
+  Expected: Stainless steel/brass finished hardware fittings for doors and locks of branded ...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[13/18] what are internal doors in toilets made up of ?
+  Expected: Moulded/Laminated Door Shutter...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[14/18] tell me about the floors in toilets
+  Expected: Premium Quality Anti-Skid Tiles...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[15/18] tell me about drawers and cabinets
+  Expected: Soft closing bank / soft close shutters...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[16/18] Miscellaneous items in kitchen
+  Expected: Chimney, Hob, Microwave, OTG, Waste Crusher of approved make...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[17/18] what is the area of the hub?
+  Expected: 46,000 sq. ft./4,273.5 sq. m...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[18/18] Estate 128 LiveWell experience in NCR is certified as what?
+  Expected: IGBC Platinum Pre Certified...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+======================================================================
+📊 ACCURACY EVALUATION RESULTS
+======================================================================
+
+✓ Total Questions Evaluated: 18
+
+──────────────────────────────────────────────────────────────────────
+ACCURACY METRICS
+──────────────────────────────────────────────────────────────────────
+Top-1 Accuracy: 100.00%  (18/18) ⭐
+Top-3 Accuracy: 100.00%  (18/18) ⭐
+Top-5 Accuracy: 100.00%  (18/18)
+
+──────────────────────────────────────────────────────────────────────
+RANK DISTRIBUTION (Where answers were found)
+──────────────────────────────────────────────────────────────────────
+Rank 1:  18 questions
+Rank 2:   0 questions
+Rank 3:   0 questions
+Rank 4:   0 questions
+Rank 5:   0 questions
+Not Found:   0 questions
+
+======================================================================
+✅ EXCELLENT: Top-1 accuracy ≥ 80%
+✅ EXCELLENT: Top-3 accuracy ≥ 90%
+======================================================================
+
+✓ Results saved to: baseline_accuracy.json
+
+======================================================================
+📋 CATEGORY-WISE BREAKDOWN
+======================================================================
+
+METADATA:
+  Top-1: 100.0% (4/4)
+  Top-3: 100.0% (4/4)
+
+TABLE:
+  Top-1: 100.0% (8/8)
+  Top-3: 100.0% (8/8)
+
+CONTENT:
+  Top-1: 100.0% (6/6)
+  Top-3: 100.0% (6/6)
+======================================================================

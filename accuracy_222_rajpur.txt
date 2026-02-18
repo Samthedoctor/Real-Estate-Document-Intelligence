@@ -1,0 +1,129 @@
+(task) D:\agmentis_task>python accuracy_evaluator.py
+
+🎯 Starting Accuracy Evaluation...
+This will test if the system retrieves CORRECT information
+
+======================================================================
+🎯 RUNNING ACCURACY EVALUATION
+======================================================================
+Total test cases: 18
+======================================================================
+
+[1/18] What about rail connectivity with daily trains?
+  Expected:  Shatabdi Express, Jan Shatabdi Express and Nanda Devi Express...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[2/18] How many total residences are there in the 222 Rajpur community?
+  Expected: 22 bespoke residences...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[3/18] What is the RERA Registration Number for 222 Rajpur?
+  Expected: UKREP08170000001...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[4/18] How many Townhouse units are available?
+  Expected: 14 Units...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[5/18] Which forest does the project abut?
+  Expected: Malsi Reserve Forest...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[6/18] What is the distance to Max Super Speciality Hospital?
+  Expected: 3.2 km...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[7/18] How far is the Jolly Grant Airport from the project?
+  Expected: 36.9 km (approx 75 minutes)...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[8/18] What is the Built-up Area of a Townhouse unit?
+  Expected: 3990 sq.ft....
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[9/18] What is the Carpet Area of a Courtyard Villa?
+  Expected: 3276 sq.ft....
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[10/18] What is the plot size range for Forest Villas?
+  Expected: 435-499 sq.m....
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[11/18] What is the ceiling height provided in the residences?
+  Expected: 10.5 ft...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[12/18] How many car parking spaces are provided per residence?
+  Expected: 2 car parking spaces...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[13/18] What is the booking amount percentage in the Down Payment Plan?
+  Expected: 10% of Basic Sales Price...
+  ✅ Found at Rank 2 (Top-3 ✓)
+
+[14/18] What brand of sanitary fixtures is provided in the bathrooms?
+  Expected: Kohler or equivalent...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[15/18] What type of windows are installed in the residences?
+  Expected: Insulated premium windows with double glazed units...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[16/18] What flooring is used in the bedrooms?
+  Expected: Perlato marble flooring...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[17/18] What brand of microwave and oven is provided in the kitchen?
+  Expected: Siemens or equivalent...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+[18/18] What security systems are available in the community?
+  Expected: 24x7 monitoring, CCTV cameras, and RFID-based car recognition...
+  ✅ Found at Rank 1 (Top-1 ✓, Top-3 ✓)
+
+======================================================================
+📊 ACCURACY EVALUATION RESULTS
+======================================================================
+
+✓ Total Questions Evaluated: 18
+
+──────────────────────────────────────────────────────────────────────
+ACCURACY METRICS
+──────────────────────────────────────────────────────────────────────
+Top-1 Accuracy:  94.44%  (17/18) ⭐
+Top-3 Accuracy: 100.00%  (18/18) ⭐
+Top-5 Accuracy: 100.00%  (18/18)
+
+──────────────────────────────────────────────────────────────────────
+RANK DISTRIBUTION (Where answers were found)
+──────────────────────────────────────────────────────────────────────
+Rank 1:  17 questions
+Rank 2:   1 questions
+Rank 3:   0 questions
+Rank 4:   0 questions
+Rank 5:   0 questions
+Not Found:   0 questions
+
+======================================================================
+✅ EXCELLENT: Top-1 accuracy ≥ 80%
+✅ EXCELLENT: Top-3 accuracy ≥ 90%
+======================================================================
+
+✓ Results saved to: baseline_accuracy.json
+
+======================================================================
+📋 CATEGORY-WISE BREAKDOWN
+======================================================================
+
+METADATA:
+  Top-1: 100.0% (5/5)
+  Top-3: 100.0% (5/5)
+
+NUMERICAL:
+  Top-1: 87.5% (7/8)
+  Top-3: 100.0% (8/8)
+
+CONTENT:
+  Top-1: 100.0% (5/5)
+  Top-3: 100.0% (5/5)
+======================================================================

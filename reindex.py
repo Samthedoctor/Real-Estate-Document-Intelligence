@@ -7,7 +7,7 @@ system.reset_database()
 
 # Index single PDF
 pdf_files = [
-    "Environment-Clearance-of-Estate-128-I.pdf"
+    "222-rajpur-brochure.pdf"
 ]
 
 system.add_documents(pdf_files)

@@ -214,34 +214,33 @@ class APIPerformanceTester:
 
 # ==================== TEST QUESTIONS (18-20 as required) ====================
 TEST_QUESTIONS = [
-    # Basic queries
-    {"question": "What is the EC identification number?", "k": 3},
-    {"question": "What is the file number?", "k": 3},
-    {"question": "What is the name of the company?", "k": 3},
-    {"question": "Which sector is the project located in?", "k": 3},
-    {"question": "What is the total cost of the project?", "k": 3},
-    
-    # Water-related
-    {"question": "What is the total plot area?", "k": 3},
-    {"question": "What is the total built-up area?", "k": 3},
-    {"question": "What is the total water requirement?", "k": 3},
-    
-    # Project details
-    {"question": "What is the fresh water demand?", "k": 3},
-    {"question": "What is the STP capacity?", "k": 3},
-    {"question": "What is the total waste water?", "k": 3},
-    {"question": "What is the total proposed green area?", "k": 3},
-    
-    # Sector-specific (filtered)
-    {"question": "What is the total power requirement?", "k": 5},
-    {"question": "What is the capacity of backup DG sets?", "k": 5},
-    
-    # Environmental conditions
-    {"question": "What is the total solid waste generation?", "k": 5},
-    {"question": "How many rain water harvesting pits are proposed?", "k": 3},
-    {"question": "How many parking spaces are provided?", "k": 3},
-    {"question": "How many trees are proposed?", "k": 3},
-    
+    # Basic Project Info
+    {"question": "Who are the architects for the 222 Rajpur project?", "k": 3},
+    {"question": "How many total residences are there in the 222 Rajpur community?", "k": 3},
+    {"question": "What is the RERA Registration Number for 222 Rajpur?", "k": 3},
+    {"question": "How many Townhouse units are available?", "k": 3},
+    {"question": "Which forest does the project abut?", "k": 3},
+
+    # Location & Connectivity
+    {"question": "What is the distance to Max Super Speciality Hospital?", "k": 3},
+    {"question": "How far is the Jolly Grant Airport from the project?", "k": 3},
+
+    # Areas & Dimensions
+    {"question": "What is the Built-up Area of a Townhouse unit?", "k": 3},
+    {"question": "What is the Carpet Area of a Courtyard Villa?", "k": 3},
+    {"question": "What is the plot size range for Forest Villas?", "k": 3},
+    {"question": "What is the ceiling height provided in the residences?", "k": 3},
+
+    # Specifications & Amenities
+    {"question": "What brand of sanitary fixtures is provided in the bathrooms?", "k": 3},
+    {"question": "What type of windows are installed in the residences?", "k": 3},
+    {"question": "What flooring is used in the bedrooms?", "k": 3},
+    {"question": "How many car parking spaces are provided per residence?", "k": 3},
+    {"question": "What brand of microwave and oven is provided in the kitchen?", "k": 3},
+    {"question": "What security systems are available in the community?", "k": 3},
+
+    # Financial
+    {"question": "What is the booking amount percentage in the Down Payment Plan?", "k": 3}
 ]
 
 

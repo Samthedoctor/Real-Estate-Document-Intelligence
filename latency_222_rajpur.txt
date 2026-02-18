@@ -1,0 +1,322 @@
+(task) D:\agmentis_task>python test_api.py
+🧹 Clearing cache...
+
+🔥 Warming up the engine (Ignoring these queries)...
+... Done! System is hot.
+
+======================================================================
+🧪 RUNNING PERFORMANCE TEST SUITE
+======================================================================
+Test questions: 18
+Iterations per question: 3
+Total queries: 54
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Iteration 1/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: Who are the architects for the 222 Rajpur project?...
+  ✓ Latency: 227.98ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: How many total residences are there in the 222 Raj...
+  ✓ Latency: 229.30ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: What is the RERA Registration Number for 222 Rajpu...
+  ✓ Latency: 209.79ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: How many Townhouse units are available?...
+  ✓ Latency: 310.92ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: Which forest does the project abut?...
+  ✓ Latency: 194.29ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What is the distance to Max Super Speciality Hospi...
+  ✓ Latency: 226.54ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: How far is the Jolly Grant Airport from the projec...
+  ✓ Latency: 220.05ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What is the Built-up Area of a Townhouse unit?...
+  ✓ Latency: 369.93ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: What is the Carpet Area of a Courtyard Villa?...
+  ✓ Latency: 260.68ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What is the plot size range for Forest Villas?...
+  ✓ Latency: 254.03ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is the ceiling height provided in the residen...
+  ✓ Latency: 185.79ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: What brand of sanitary fixtures is provided in the...
+  ✓ Latency: 293.91ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: What type of windows are installed in the residenc...
+  ✓ Latency: 152.82ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: What flooring is used in the bedrooms?...
+  ✓ Latency: 247.31ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: How many car parking spaces are provided per resid...
+  ✓ Latency: 180.68ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: What brand of microwave and oven is provided in th...
+  ✓ Latency: 320.19ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: What security systems are available in the communi...
+  ✓ Latency: 184.16ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: What is the booking amount percentage in the Down ...
+  ✓ Latency: 295.61ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+──────────────────────────────────────────────────────────────────────
+Iteration 2/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: Who are the architects for the 222 Rajpur project?...
+  ✓ Latency: 254.74ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: How many total residences are there in the 222 Raj...
+  ✓ Latency: 218.94ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: What is the RERA Registration Number for 222 Rajpu...
+  ✓ Latency: 229.29ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: How many Townhouse units are available?...
+  ✓ Latency: 258.54ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: Which forest does the project abut?...
+  ✓ Latency: 214.53ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What is the distance to Max Super Speciality Hospi...
+  ✓ Latency: 205.53ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: How far is the Jolly Grant Airport from the projec...
+  ✓ Latency: 212.24ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What is the Built-up Area of a Townhouse unit?...
+  ✓ Latency: 254.52ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: What is the Carpet Area of a Courtyard Villa?...
+  ✓ Latency: 241.18ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What is the plot size range for Forest Villas?...
+  ✓ Latency: 235.56ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is the ceiling height provided in the residen...
+  ✓ Latency: 178.97ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: What brand of sanitary fixtures is provided in the...
+  ✓ Latency: 250.55ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: What type of windows are installed in the residenc...
+  ✓ Latency: 162.61ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: What flooring is used in the bedrooms?...
+  ✓ Latency: 239.76ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: How many car parking spaces are provided per resid...
+  ✓ Latency: 144.31ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: What brand of microwave and oven is provided in th...
+  ✓ Latency: 224.94ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: What security systems are available in the communi...
+  ✓ Latency: 151.30ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: What is the booking amount percentage in the Down ...
+  ✓ Latency: 251.33ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+──────────────────────────────────────────────────────────────────────
+Iteration 3/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: Who are the architects for the 222 Rajpur project?...
+  ✓ Latency: 196.33ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: How many total residences are there in the 222 Raj...
+  ✓ Latency: 204.59ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: What is the RERA Registration Number for 222 Rajpu...
+  ✓ Latency: 209.17ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: How many Townhouse units are available?...
+  ✓ Latency: 252.37ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: Which forest does the project abut?...
+  ✓ Latency: 170.46ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What is the distance to Max Super Speciality Hospi...
+  ✓ Latency: 258.10ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: How far is the Jolly Grant Airport from the projec...
+  ✓ Latency: 239.71ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What is the Built-up Area of a Townhouse unit?...
+  ✓ Latency: 268.79ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: What is the Carpet Area of a Courtyard Villa?...
+  ✓ Latency: 238.67ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What is the plot size range for Forest Villas?...
+  ✓ Latency: 239.96ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is the ceiling height provided in the residen...
+  ✓ Latency: 170.41ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: What brand of sanitary fixtures is provided in the...
+  ✓ Latency: 267.95ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: What type of windows are installed in the residenc...
+  ✓ Latency: 153.89ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: What flooring is used in the bedrooms?...
+  ✓ Latency: 256.95ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: How many car parking spaces are provided per resid...
+  ✓ Latency: 148.35ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: What brand of microwave and oven is provided in th...
+  ✓ Latency: 235.17ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: What security systems are available in the communi...
+  ✓ Latency: 151.97ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: What is the booking amount percentage in the Down ...
+  ✓ Latency: 246.42ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+======================================================================
+📊 PERFORMANCE TEST RESULTS
+======================================================================
+
+✓ Total Queries: 54
+✓ Successful: 54
+✓ Failed: 0
+✓ Cache Hit Rate: 0.0%
+
+──────────────────────────────────────────────────────────────────────
+CACHE MISS LATENCY (Real Search Performance) ⭐
+──────────────────────────────────────────────────────────────────────
+Count:       54 queries
+Average:       225.96 ms
+Median:        229.29 ms
+Min:           144.31 ms
+Max:           369.93 ms
+
+Percentiles:
+P95:           310.92 ms  ⭐⭐⭐
+P99:           369.93 ms
+======================================================================
+
+✓ Results saved to: baseline_performance.json
+
+(task) D:\agmentis_task>

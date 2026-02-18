@@ -17,7 +17,8 @@ from langchain_core.documents import Document
 from rank_bm25 import BM25Okapi
 import numpy as np
 from sentence_transformers import CrossEncoder
-from groq import Groq  # ← NEW: Groq for LLM
+from groq import Groq  
+from llama_parse import LlamaParse
 
 class HybridDocumentSystem:
     """Generic Document Intelligence System - Works for ANY PDF"""
@@ -85,18 +86,87 @@ class HybridDocumentSystem:
             self.use_llm = False
             print("⚠️  No GROQ_API_KEY found - LLM disabled")
 
-        print("✓ Generic system with reranking + LLM initialized!")
+        # ==================== NEW: Initialize LlamaParse ====================
+        print("🦙 Initializing LlamaParse...")
+        llama_key = os.environ.get('LLAMA_CLOUD_API_KEY')
+        if llama_key:
+            self.llama_parser = LlamaParse(
+                api_key=llama_key,
+                result_type="markdown",  # Get clean markdown
+                num_workers=4,  # Parallel processing
+                verbose=True,
+                language="en"
+            )
+            self.use_llamaparse = True
+            print("✓ LlamaParse initialized!")
+        else:
+            self.llama_parser = None
+            self.use_llamaparse = False
+            print("⚠️  No LLAMA_CLOUD_API_KEY found - LlamaParse disabled, using PDFPlumber")
+
+        print("✓ Generic system with LlamaParse + reranking + LLM initialized!")
     
+    # ==================== GENERIC PDF EXTRACTION ====================
     # ==================== GENERIC PDF EXTRACTION ====================
     def extract_from_pdf(self, pdf_path: str) -> Dict[str, Any]:
         print(f"\n📄 Extracting: {Path(pdf_path).name}")
         
+        # Try LlamaParse first if available
+        if self.use_llamaparse:
+            print("🦙 Using LlamaParse for extraction...")
+            try:
+                extracted = self._extract_with_llamaparse(pdf_path)
+                if self._is_good_quality(extracted['full_text']):
+                    print("✅ LlamaParse extraction successful!")
+                    return extracted
+                else:
+                    print("⚠️  LlamaParse gave poor results, falling back to PDFPlumber...")
+            except Exception as e:
+                print(f"⚠️  LlamaParse failed: {e}, falling back to PDFPlumber...")
+        
+        # Fallback to PDFPlumber
+        print("📄 Using PDFPlumber for extraction...")
+        extracted = self._extract_with_pdfplumber(pdf_path)
+        return extracted
+    
+    def _extract_with_llamaparse(self, pdf_path: str) -> Dict[str, Any]:
+        """Extract text using LlamaParse (best for encoded PDFs)"""
+        # Parse the PDF
+        documents = self.llama_parser.load_data(pdf_path)
+        
+        # Combine all pages
+        full_text = ""
+        pages = []
+        
+        for i, doc in enumerate(documents, start=1):
+            page_text = doc.text
+            full_text += f"\n[PAGE {i}]\n{page_text}\n"
+            pages.append({
+                'page_num': i,
+                'text': page_text
+            })
+        
+        extracted = {
+            'file_name': Path(pdf_path).name,
+            'file_path': pdf_path,
+            'num_pages': len(pages),
+            'full_text': full_text,
+            'pages': pages,
+            'extraction_method': 'LlamaParse'
+        }
+        
+        print(f"✓ Extracted {len(full_text)} characters from {len(pages)} pages")
+        return extracted
+    
+    def _extract_with_pdfplumber(self, pdf_path: str) -> Dict[str, Any]:
+        """Fallback: Extract using PDFPlumber"""
         extracted = {
             'file_name': Path(pdf_path).name,
             'file_path': pdf_path,
             'num_pages': 0,
             'full_text': '',
-            'pages': []
+            'pages': [],
+            'extraction_method': 'PDFPlumber'
         }
         
         with pdfplumber.open(pdf_path) as pdf:
@@ -120,6 +190,30 @@ class HybridDocumentSystem:
         
         print(f"✓ Extracted {len(extracted['full_text'])} characters from {extracted['num_pages']} pages")
         return extracted
+    
+    def _is_good_quality(self, text: str) -> bool:
+        """Check if extracted text is good quality"""
+        if not text or len(text.strip()) < 100:
+            return False
+        
+        # Check for CID encoding issues
+        if "(cid:" in text.lower():
+            print("⚠️  Detected CID encoding issues")
+            return False
+        
+        # Check for reasonable word count
+        words = text.split()
+        if len(words) < 50:
+            print(f"⚠️  Too few words extracted: {len(words)}")
+            return False
+        
+        # Check for too many non-printable characters
+        printable_ratio = sum(c.isprintable() or c.isspace() for c in text) / len(text)
+        if printable_ratio < 0.7:
+            print(f"⚠️  Too many non-printable chars: {printable_ratio:.2%}")
+            return False
+        
+        return True
     
     def _generic_table_to_text(self, table_data: List[List[str]], page_num: int, table_idx: int) -> str:
         if not table_data or len(table_data) < 2:

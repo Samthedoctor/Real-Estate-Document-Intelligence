@@ -1,0 +1,321 @@
+
+D:\agmentis_task>D:/agmentis_task/task/Scripts/activate.bat
+
+(task) D:\agmentis_task>python test_api.py
+🧹 Clearing cache...
+
+🔥 Warming up the engine (Ignoring these queries)...
+... Done! System is hot.
+
+======================================================================
+🧪 RUNNING PERFORMANCE TEST SUITE
+======================================================================
+Test questions: 18
+Iterations per question: 3
+Total queries: 54
+======================================================================
+
+──────────────────────────────────────────────────────────────────────
+Iteration 1/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: How big is the landscape...
+  ✓ Latency: 182.68ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: Can you list some amenities?...
+  ✓ Latency: 206.01ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: How large is deck...
+  ✓ Latency: 172.13ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: What is carpet area of terrace ?...
+  ✓ Latency: 192.41ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: How big are terrace suite decks and carpet area?...
+  ✓ Latency: 189.79ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What are external walls in living room made up of?...
+  ✓ Latency: 211.00ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: Can you tell me about HVAC?...
+  ✓ Latency: 206.31ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What are hardwares in kitchen?...
+  ✓ Latency: 201.88ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: Tell me about railing in balcony...
+  ✓ Latency: 202.21ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What are internal wall and ceilings in bedroom mad...
+  ✓ Latency: 215.27ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is fixture and fittings in kitchen made up of...
+  ✓ Latency: 176.16ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: Hardware and locks used in bedroom...
+  ✓ Latency: 168.72ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: Tell me about tile cladding in toilets...
+  ✓ Latency: 172.20ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: Fixture and fittings in toilets...
+  ✓ Latency: 175.46ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: Tell me about ceiling in toilets...
+  ✓ Latency: 190.74ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: Miscellaneous items in kitchen...
+  ✓ Latency: 153.71ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: how are floors in balcony?...
+  ✓ Latency: 292.60ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: Tell me about Sanitary Ware & C.P fittings...
+  ✓ Latency: 192.00ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+──────────────────────────────────────────────────────────────────────
+Iteration 2/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: How big is the landscape...
+  ✓ Latency: 175.62ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: Can you list some amenities?...
+  ✓ Latency: 188.41ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: How large is deck...
+  ✓ Latency: 224.90ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: What is carpet area of terrace ?...
+  ✓ Latency: 190.16ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: How big are terrace suite decks and carpet area?...
+  ✓ Latency: 206.10ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What are external walls in living room made up of?...
+  ✓ Latency: 207.82ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: Can you tell me about HVAC?...
+  ✓ Latency: 185.84ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What are hardwares in kitchen?...
+  ✓ Latency: 212.87ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: Tell me about railing in balcony...
+  ✓ Latency: 141.69ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What are internal wall and ceilings in bedroom mad...
+  ✓ Latency: 179.25ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is fixture and fittings in kitchen made up of...
+  ✓ Latency: 167.02ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: Hardware and locks used in bedroom...
+  ✓ Latency: 158.14ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: Tell me about tile cladding in toilets...
+  ✓ Latency: 157.76ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: Fixture and fittings in toilets...
+  ✓ Latency: 167.37ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: Tell me about ceiling in toilets...
+  ✓ Latency: 169.35ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: Miscellaneous items in kitchen...
+  ✓ Latency: 157.72ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: how are floors in balcony?...
+  ✓ Latency: 214.54ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: Tell me about Sanitary Ware & C.P fittings...
+  ✓ Latency: 181.04ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+──────────────────────────────────────────────────────────────────────
+Iteration 3/3
+──────────────────────────────────────────────────────────────────────
+
+[1/18] Testing: How big is the landscape...
+  ✓ Latency: 176.61ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[2/18] Testing: Can you list some amenities?...
+  ✓ Latency: 198.14ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[3/18] Testing: How large is deck...
+  ✓ Latency: 168.12ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[4/18] Testing: What is carpet area of terrace ?...
+  ✓ Latency: 183.15ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[5/18] Testing: How big are terrace suite decks and carpet area?...
+  ✓ Latency: 182.02ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[6/18] Testing: What are external walls in living room made up of?...
+  ✓ Latency: 208.18ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[7/18] Testing: Can you tell me about HVAC?...
+  ✓ Latency: 178.39ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[8/18] Testing: What are hardwares in kitchen?...
+  ✓ Latency: 193.43ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[9/18] Testing: Tell me about railing in balcony...
+  ✓ Latency: 147.34ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[10/18] Testing: What are internal wall and ceilings in bedroom mad...
+  ✓ Latency: 189.28ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[11/18] Testing: What is fixture and fittings in kitchen made up of...
+  ✓ Latency: 177.50ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[12/18] Testing: Hardware and locks used in bedroom...
+  ✓ Latency: 148.89ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[13/18] Testing: Tell me about tile cladding in toilets...
+  ✓ Latency: 154.61ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[14/18] Testing: Fixture and fittings in toilets...
+  ✓ Latency: 190.93ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[15/18] Testing: Tell me about ceiling in toilets...
+  ✓ Latency: 187.74ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[16/18] Testing: Miscellaneous items in kitchen...
+  ✓ Latency: 145.15ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[17/18] Testing: how are floors in balcony?...
+  ✓ Latency: 235.42ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+[18/18] Testing: Tell me about Sanitary Ware & C.P fittings...
+  ✓ Latency: 184.25ms
+  ✓ Results: 3
+  ✓ Cache: MISS
+
+======================================================================
+📊 PERFORMANCE TEST RESULTS
+======================================================================
+
+✓ Total Queries: 54
+✓ Successful: 54
+✓ Failed: 0
+✓ Cache Hit Rate: 0.0%
+
+──────────────────────────────────────────────────────────────────────
+CACHE MISS LATENCY (Real Search Performance) ⭐
+──────────────────────────────────────────────────────────────────────
+Count:       54 queries
+Average:       185.85 ms
+Median:        183.70 ms
+Min:           141.69 ms
+Max:           292.60 ms
+
+Percentiles:
+P95:           224.90 ms  ⭐⭐⭐
+P99:           292.60 ms
+======================================================================
