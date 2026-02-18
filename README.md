@@ -63,29 +63,43 @@ This script evaluates the system against a test set of questions to calculate To
 python accuracy_evaluator.py
 ```
 
-## 📊 Success Metrics
+## 📊 Success Metrics & Benchmarks
 
-The system was evaluated using a rigorous test suite of 18 domain-specific questions across 3 iterations (54 total queries) to ensure statistical consistency.
+The system was rigorously evaluated on **two distinct real-estate datasets** (Estate 128 Brochure & 222 Rajpur Brochure) to ensure domain adaptability.
+
+### 🏆 Executive Summary
+* **Fastest Response:** 141ms (Estate 128)
+* **Highest Precision:** 100% Top-1 Accuracy (Estate 128)
+
 
 ### 1. Performance (Latency)
-*Measured on a steady-state system (post-warmup).*
+*Measured on a steady-state system (post-warmup) over 3 iterations.*
 
-| Metric | Result | Target / Status |
-| :--- | :--- | :--- |
-| **Average Query Latency** | **218.07 ms** | ✅ Ultra Fast (< 500ms) |
-| **P95 Latency** | **363.09 ms** | ✅ High Consistency |
-| **P99 Latency (Worst Case)** | **400.03 ms** | ✅ Reliable |
-| **Successful Queries** | **100% (54/54)** | ✅ Zero Failures |
+| Metric | Estate 128 (Complex) | 222 Rajpur (Standard) | Status |
+| :--- | :--- | :--- | :--- |
+| **Average Latency** | **185.85 ms** | **225.96 ms** | ✅ Ultra Fast (< 300ms) |
+| **P95 Latency** | **224.90 ms** | **310.92 ms** | ✅ High Consistency |
+| **P99 Latency** | **292.60 ms** | **369.93 ms** | ✅ No Spikes |
+| **Cache Miss Speed** | **~185 ms** | **~226 ms** | 🚀 Optimized Retrieval |
 
 ### 2. Retrieval Quality (Accuracy)
-*Evaluated based on the system's ability to find the correct document chunk for technical project details.*
+*Evaluated against a Golden Dataset of 18 domain-specific questions per document.*
 
-| Metric | Accuracy | Count |
-| :--- | :--- | :--- |
-| **Top-1 Accuracy** | **88.89%** | 16 / 18 |
-| **Top-3 Accuracy** | **100.00%** | 18 / 18 |
-| **Top-5 Accuracy** | **100.00%** | 18 / 18 |
+| Metric | Estate 128 Accuracy | 222 Rajpur Accuracy | 
+| :--- | :--- | :--- | 
+| **Top-1 Accuracy** | **100.00%** (18/18) | **94.44%** (17/18) | 
+| **Top-3 Accuracy** | **100.00%** (18/18) | **100.00%** (18/18) | 
 
+
+---
+
+### 📂 🔍 Verification (Raw Logs)
+To verify these metrics, detailed execution logs are provided in this repository. You can inspect the exact latency per query and the retrieved chunks for every test case.
+
+* 📄 **`E-128_latency.txt and latency_222_rajpur.txt from the terminal outputs`**: Contains the millisecond-level breakdown of all 54 queries per document, including cache hit/miss rates and P95 calculations.
+* 📄 **`accuracy_222_rajpur.txt and performance_metrics_E-128.txt from the terminal outputs `**: Contains the ground-truth comparison, showing the expected answer vs. the retrieved answer and the exact rank (1-5) where the correct information was found.
+
+> *Note: These files are automatically generated when running `test_api.py` and `accuracy_evaluator.py`.*
 ---
 
 ## 🧪 Custom Testing & Limitations
@@ -137,4 +151,5 @@ Finding the perfect chunk size was a critical challenge:
 ### 3. Fine-Tuning Embeddings (Future Stretch Goal)
 The current system uses the pre-trained `all-mpnet-base-v2` model. While excellent for general English, it struggles slightly with highly specific industry acronyms (e.g., "NOC", "CTE", "EC").
 * **Optimization:** A future improvement would be to **fine-tune the embedding model** on a dataset of real estate and environmental regulation documents. This would align the vector space more closely with the domain-specific vocabulary.
+
 
