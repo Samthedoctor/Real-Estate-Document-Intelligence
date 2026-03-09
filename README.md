@@ -56,110 +56,118 @@ Once the server is running, open your browser and go to:
 ### 🎥 Demo Video
 Link: https://drive.google.com/file/d/1_CSQqerAGQakDI1dYpmgHvEDOx-PUFk_/view?usp=sharing
 
+### Architectural flow
+
+```mermaid
+graph TD
+    A[Raw PDF Document] --> B[LlamaParse REST API]
+    B --> C{Custom Regex Pipeline}
+    C -->|Converts Markdown Tables| D[Clean Natural Language Text]
+    D --> E[Markdown Header Splitter]
+    
+    E --> F{Recursive Character Splitter}
+    F -->|Chunks > 1200 chars| G[Sub-Chunks]
+    F -->|Chunks <= 1200 chars| H[Header-Aware Chunks]
+    
+    G --> I[(ChromaDB Vector Index)]
+    H --> I
+    G --> J[(BM25 Keyword Index)]
+    H --> J
+    
+    K[User Query] --> L{LRU Cache Check}
+    L -->|Cache Hit| M[Return Instant Answer]
+    L -->|Cache Miss| N[Parallel Search]
+    
+    N --> O[Vector Search]
+    N --> P[BM25 Search]
+    
+    O --> Q[Score Fusion]
+    P --> Q
+    
+    Q --> R[Cross-Encoder Reranking]
+    R --> S[Top-K Context]
+    S --> T[Groq LLM Generation]
+    T --> U[Final Answer & Cache Update]
+```
+
 ### 🧪 Testing & Evaluation
 To verify the system performance and retrieval quality, run the following scripts:
 
 ### 1. Performance Benchmarking
-This script measures latency, including Average and P95 metrics. It includes a warm-up phase to ensure steady-state accuracy.
+This script measures latency, including Average and P95 metrics. It includes renranker, caching various combination and thier tradeoff.
 ```bash
-python test_api.py
+python benchmark_latency.py
 ```
-Results will be saved to baseline_performance.json.
+Results will be saved to benchmark_latency.json.
 
 ### 2. Retrieval Accuracy
-This script evaluates the system against a test set of questions to calculate Top-1 and Top-3 accuracy.
+This script evaluates the system against a test set of questions to calculate Top-1 and Top-3 accuracy, and other metrics like recall, MRR, nDCG, hallucination rate,etc.
 ```bash
-python accuracy_evaluator.py
+python evaluation_framework.py
 ```
 
 ## 📊 Success Metrics & Benchmarks
 
-The system was rigorously evaluated on **two distinct real-estate datasets** (Estate 128 Brochure & 222 Rajpur Brochure) to ensure domain adaptability.
+The system was rigorously evaluated on **three distinct real-estate datasets** (max-house-brochure, 222 Rajpur Brochure & max-towers-brochure) to ensure domain adaptability.
 
-### 🏆 Executive Summary
-* **Fastest Response:** 141ms (Estate 128)
-* **Highest Precision:** 100% Top-1 Accuracy (Estate 128)
-
-
-### 1. Performance (Latency)
-*Measured on a steady-state system (post-warmup) over 3 iterations.*
-
-| Metric | Estate 128 (Complex) | 222 Rajpur (Standard) | Status |
-| :--- | :--- | :--- | :--- |
-| **Average Latency** | **185.85 ms** | **225.96 ms** | ✅ Ultra Fast (< 300ms) |
-| **P95 Latency** | **224.90 ms** | **310.92 ms** | ✅ High Consistency |
-| **P99 Latency** | **292.60 ms** | **369.93 ms** | ✅ No Spikes |
-| **Cache Miss Speed** | **~185 ms** | **~226 ms** | 🚀 Optimized Retrieval |
-
-### 2. Retrieval Quality (Accuracy)
-*Evaluated against a Golden Dataset of 18 domain-specific questions per document.*
-
-| Metric | Estate 128 Accuracy | 222 Rajpur Accuracy | 
-| :--- | :--- | :--- | 
-| **Top-1 Accuracy** | **100.00%** (18/18) | **94.44%** (17/18) | 
-| **Top-3 Accuracy** | **100.00%** (18/18) | **100.00%** (18/18) | 
-
+Results will be saved to evaluation_results.json.
 
 ---
 
 ### 📂 🔍 Verification (Raw Logs)
 To verify these metrics, detailed execution logs are provided in this repository. You can inspect the exact latency per query and the retrieved chunks for every test case.
 
-* 📄 **`E-128_latency.txt and latency_222_rajpur.txt from the terminal outputs`**: Contains the millisecond-level breakdown of all 54 queries per document, including cache hit/miss rates and P95 calculations.
-* 📄 **`accuracy_222_rajpur.txt and performance_metrics_E-128.txt from the terminal outputs `**: Contains the ground-truth comparison, showing the expected answer vs. the retrieved answer and the exact rank (1-5) where the correct information was found.
+* 📄 **`benchmark_latency.txt`**: Contains comparison between different combination of caching and reranking
+* 📄 **`evaluation_fin.json `**: Contains the ground-truth comparison, showing the expected answer vs. the retrieved answer and the exact rank (1-5) where the correct information was found.
 
-> *Note: These files are automatically generated when running `test_api.py` and `accuracy_evaluator.py`.*
 ---
 
 ## 🧪 Custom Testing & Limitations
 
 ### 🛠️ Run Your Own Tests
-You can evaluate the system on your own custom questions:
+You can evaluate the system on your own custom questions without ui:
 
-1.  **Performance:** Open `test_api.py`, modify the `TEST_QUESTIONS` list with your own queries, and run:
+ **Performance:** Open `run_queries`, modify the `query` list with your own queries, and run:
     ```bash
-    python test_api.py
+    python run_queries.py
     ```
-    *Check `baseline_performance.json` for detailed latency metrics.*
-
-2.  **Accuracy:** Open `accuracy_evaluator.py`, update the test set, and run:
-    ```bash
-    python accuracy_evaluator.py
-    ```
-
-### ⚠️ Known Limitations
-* **Scanned PDFs:** This version utilizes `pdfplumber` for high-speed text extraction. It **does not support scanned image PDFs** (OCR is not enabled in this MVP to prioritize latency).
-* **Scanned Tables:** Tables within images or screenshots will not be parsed. The system works best with digital-native PDFs where text is selectable.
 
 ### 🛠️ Tech Stack
 1) Backend: FastAPI, Python 3.11
 2) Search: ChromaDB (Vector) + BM25 (Keyword)
 3) Models: Embeddings: all-mpnet-base-v2
 4) Reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
-5) LLM: Llama-3.3-70b-Versatile (via Groq)
+5) LLM: llama-3.1-8b-instant(via Groq)
 6) Frontend: Vanilla JS, HTML5, CSS3 (Modern Indigo Theme)
 
-### 🧩 Architecture Flow
-1) Hybrid Retrieval: Simultaneous search using ChromaDB for semantic meaning and BM25 for exact keyword matching.
-2) Reranking: top candidates are re-scored using a Cross-Encoder model.
-3) Streaming Generation: LLM generates answers with real-time token streaming to the UI.
-
-## ⚠️ Challenges & Optimizations
-
-### 1. Handling Large Documents
-Processing extremely large PDFs (100+ pages) introduces significant "noise" into the vector search, as irrelevant sections may share semantic similarities with the query.
-* **Current Limit:** The system is optimized for Environmental Clearance documents under **50 pages**.
-* **Trade-off:** Larger documents require more RAM for the **BM25 index construction** and increase the **Reranking latency** (scoring more candidates takes longer).
-
-### 2. The Chunking Dilemma (Accuracy vs. Speed)
-Finding the perfect chunk size was a critical challenge:
-* **Too Small (< 200 chars):** Precise matching but loses context (e.g., a number without its unit).
-* **Too Large (> 1000 chars):** Captures context but confuses the embedding model with multiple topics in one vector.
-* **Solution:** We settled on a **400-character chunk size with 100-character overlap**. This ensures that numerical values (like "333 KLD") are always captured alongside their labels.
-
-### 3. Fine-Tuning Embeddings (Future Stretch Goal)
-The current system uses the pre-trained `all-mpnet-base-v2` model. While excellent for general English, it struggles slightly with highly specific industry acronyms (e.g., "NOC", "CTE", "EC").
-* **Optimization:** A future improvement would be to **fine-tune the embedding model** on a dataset of real estate and environmental regulation documents. This would align the vector space more closely with the domain-specific vocabulary.
 
 
+## ⚠️ Current Challenges & System Trade-Offs
+
+Building a RAG system for highly unstructured real estate brochures revealed a massive tension between pure retrieval accuracy and production-ready latency.  Here are the current challenges and how we navigated them:
+
+### 1. The Accuracy vs. Latency Tug-of-War (Reranking)
+* **The Challenge:** Standard vector search (ChromaDB) frequently failed on comparison questions (e.g., comparing amenities between two different properties) because the semantic similarity of the text was too close.
+* **The Trade-off:** We introduced a Cross-Encoder reranker (`ms-marco-MiniLM-L-6-v2`) which immediately fixed the accuracy issues. However, because it is CPU-bound, it adds 150-250ms+ to every query. 
+* **Current Optimization:** We accepted the latency hit to maintain Top-1 accuracy, but implemented a **Multi-Tier LRU Caching System** to completely bypass this latency (dropping it to 0.0ms) for repeated queries.
+
+### 2. Information Suppression & The Chunking Pivot
+* **The Challenge:** In dense documents, highly specific data points (like "14 Townhouse units") were getting "suppressed" by surrounding vector noise. An embedding averages out the meaning of a chunk, causing isolated numbers to get buried.
+* **The Trade-off:** I initially experimented with strict **Page-Aware Chunking** to isolate facts to their physical pages, which showed great promise in unburying suppressed information. However, due to time constraints and edge cases, we couldn't fully productionize it.
+* **Current Optimization:** The MVP currently relies on converting raw Markdown tables into natural language sentences, followed by a `MarkdownHeaderTextSplitter` and a 1200-character recursive split. This prevents LLM hallucination on tables but leaves slight room for improvement in overall recall.
+
+### 3. Context Bloat (The Parent-Child Trap)
+* **The Challenge:** To give the LLM better context, we initially used a Parent-Child retrieval strategy. This completely backfired on latency. Retrieving 5 parent chunks dumped 15,000+ characters into the Groq prompt, adding 300-500ms to generation time. Furthermore, the massive increase in chunks bloated our BM25 corpus, slowing down keyword searches.
+* **Current Optimization:** I capped parent text injection at a strict 1500 characters. For BM25, I implemented an aggressive custom stopword filter (`a, the, and`, etc.) during tokenization. This brought BM25 search times back down to an ultra-fast **0.8ms**.
+
+### 4. Advanced Query Routing (Future Stretch Goal)
+* **The Challenge:** To fix the remaining accuracy gaps, I would like to try this  advanced architectures:
+* **Semantic Query Routing** (classifying the question to trigger specific prompts) and **Multi-Query Generation** (splitting complex questions into multiple sub-searches). 
+* **The Trade-off:** While these techniques drastically improved accuracy on suppressed information, they multiplied the embedding and LLM generation steps, blowing past our latency limits. 
+* **Future Optimization:** These advanced retrieval methods were scoped out of this MVP to prioritize speed, but they remain the primary roadmap items for future iterations (potentially using asynchronous parallel searches to mitigate the latency hit).
+
+### 5. Extraction Verification & Vector Suppression
+* **The Discovery:** Through my Page Chunking experiments, I definitively proved that the extraction pipeline is flawless. The text chunks absolutely contain the exact information needed to answer the failed queries.
+* **The Challenge (Vector Suppression):** The root cause of any remaining accuracy drops is a phenomenon known as "vector suppression" (or vector dilution). Highly specific facts (like a single unit count or dimension) nested inside a 1200-character chunk lose their semantic weight. When a query is made, the vector search often ranks broader, more generic chunks higher than the chunk containing the pinpoint answer.
+* **The Proof:** We have included a dedicated script to verify this data integrity. Reviewers can run `python check_extraction.py` to see the exact, perfectly cleaned text that gets passed to the embedding model. This isolates the current accuracy bottleneck strictly to the retrieval/scoring phase, rather than the parsing phase.
 
