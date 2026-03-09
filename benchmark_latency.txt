@@ -1,0 +1,460 @@
+(task) D:\agmentis_task>python benchmark_latency.py
+🔧 Initializing embeddings model...
+✓ BM25 index loaded successfully!
+🔧 Initializing cross-encoder reranker...
+🤖 Initializing LLM (Groq)...
+✓ LLM initialized (Groq Llama 3.3 70B)!
+🦙 Initializing LlamaParse REST API...
+✓ LlamaParse initialized!
+💾 Initializing caching system...
+✓ Caching system initialized!
+✓ Generic system with LlamaParse + Caching + Profiling initialized!
+✓ Generic system with LlamaParse + reranking + LLM initialized!
+
+======================================================================
+🚀 COMPREHENSIVE LATENCY BENCHMARK
+======================================================================
+
+======================================================================
+🔬 BENCHMARKING: Baseline (Rerank + Cache)
+======================================================================
+Reranking: True | Cache: True | k=5
+
+Iteration 1/3:
+  [ 1/10] 1345.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  652.6ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  739.5ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  553.9ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  705.7ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  523.6ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  690.8ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  709.4ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  672.1ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  831.3ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 2/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    0.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    0.0ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.5ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    0.0ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 3/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    0.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    1.0ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    0.0ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+📊 RESULTS:
+  Average:  247.5ms
+  Median:   0.0ms
+  P95:      831.3ms
+  P99:      1345.0ms
+  Range:    0.0 - 1345.0ms
+
+⚡ STAGE BREAKDOWN:
+  total_search_ms...............  742.0ms ( 50.1%)
+  reranking_ms..................  635.7ms ( 43.0%)
+  vector_search_ms..............  101.4ms (  6.8%)
+  bm25_search_ms................    0.8ms (  0.1%)
+  cache_check_ms................    0.1ms (  0.0%)
+  score_fusion_ms...............    0.1ms (  0.0%)
+
+======================================================================
+🔬 BENCHMARKING: No Cache
+======================================================================
+Reranking: True | Cache: False | k=5
+
+Iteration 1/3:
+  [ 1/10]  686.8ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  574.3ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  531.3ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  508.7ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  660.3ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  483.9ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  752.1ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  689.4ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  643.3ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10] 1024.9ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 2/3:
+  [ 1/10]  725.9ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  626.2ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  567.4ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  575.3ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  674.1ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  461.0ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  770.9ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  710.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  723.1ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  913.4ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 3/3:
+  [ 1/10]  758.3ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  706.3ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  523.7ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  655.8ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  763.1ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  499.9ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  697.4ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  685.1ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  681.8ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  817.2ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+📊 RESULTS:
+  Average:  669.7ms
+  Median:   683.4ms
+  P95:      913.4ms
+  P99:      1024.9ms
+  Range:    461.0 - 1024.9ms
+
+⚡ STAGE BREAKDOWN:
+  total_search_ms...............  669.6ms ( 50.0%)
+  reranking_ms..................  613.2ms ( 45.8%)
+  vector_search_ms..............   55.6ms (  4.1%)
+  bm25_search_ms................    0.6ms (  0.0%)
+  score_fusion_ms...............    0.2ms (  0.0%)
+
+======================================================================
+🔬 BENCHMARKING: No Reranking
+======================================================================
+Reranking: False | Cache: True | k=5
+
+Iteration 1/3:
+  [ 1/10]  738.1ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  562.2ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  506.5ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  526.8ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  714.4ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  456.1ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  737.3ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  704.5ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  684.6ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  855.6ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 2/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    0.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    0.0ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    0.0ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 3/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    0.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    0.3ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    0.0ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+📊 RESULTS:
+  Average:  216.2ms
+  Median:   0.0ms
+  P95:      738.1ms
+  P99:      855.6ms
+  Range:    0.0 - 855.6ms
+
+⚡ STAGE BREAKDOWN:
+  total_search_ms...............  648.4ms ( 50.0%)
+  reranking_ms..................  598.4ms ( 46.1%)
+  vector_search_ms..............   49.3ms (  3.8%)
+  bm25_search_ms................    0.7ms (  0.1%)
+  score_fusion_ms...............    0.1ms (  0.0%)
+  cache_check_ms................    0.0ms (  0.0%)
+
+======================================================================
+🔬 BENCHMARKING: No Rerank + No Cache
+======================================================================
+Reranking: False | Cache: False | k=5
+
+Iteration 1/3:
+  [ 1/10]  718.8ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  569.3ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  510.7ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  548.2ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  696.2ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  433.6ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  680.5ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  643.8ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  640.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  811.7ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 2/3:
+  [ 1/10]  706.7ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  585.8ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  512.1ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  499.3ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  646.7ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  431.5ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  692.7ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  645.6ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  632.4ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  811.2ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 3/3:
+  [ 1/10]  696.9ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  570.4ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  565.6ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  566.4ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  828.5ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  444.1ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  717.7ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  662.1ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  683.1ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]  925.1ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+📊 RESULTS:
+  Average:  635.9ms
+  Median:   644.7ms
+  P95:      828.5ms
+  P99:      925.1ms
+  Range:    431.5 - 925.1ms
+
+⚡ STAGE BREAKDOWN:
+  total_search_ms...............  635.9ms ( 50.0%)
+  reranking_ms..................  587.8ms ( 46.2%)
+  vector_search_ms..............   47.2ms (  3.7%)
+  bm25_search_ms................    0.8ms (  0.1%)
+  score_fusion_ms...............    0.0ms (  0.0%)
+
+======================================================================
+🔬 BENCHMARKING: Optimized (k=3)
+======================================================================
+Reranking: True | Cache: True | k=3
+
+Iteration 1/3:
+  [ 1/10]  634.6ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]  353.5ms - Q: At 222 Rajpur, what types of residences are available?
+      --------------------------------------------------
+  [ 3/10]  431.5ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one?
+      --------------------------------------------------
+  [ 4/10]  459.8ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]  479.6ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 6/10]  426.0ms - Q: What is the distance between 222 Rajpur and The Doon School?
+      --------------------------------------------------
+  [ 7/10]  417.5ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?
+      --------------------------------------------------
+  [ 8/10]  830.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]  493.4ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10] 1178.7ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 2/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    1.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    0.0ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    0.0ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+Iteration 3/3:
+  [ 1/10]    0.0ms - Q: For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?
+      --------------------------------------------------
+  [ 2/10]    0.0ms - Q: At 222 Rajpur, what types of residences are available?        
+      --------------------------------------------------
+  [ 3/10]    0.0ms - Q: Is 222 Rajpur adjacent to any forest area? If yes, which one? 
+      --------------------------------------------------
+  [ 4/10]    0.0ms - Q: What are the views offered from residences at 222 Rajpur, Dehradun?
+      --------------------------------------------------
+  [ 5/10]    0.0ms - Q: How far is Jolly Grant Airport from 222 Rajpur, Dehradun?     
+      --------------------------------------------------
+  [ 6/10]    0.0ms - Q: What is the distance between 222 Rajpur and The Doon School?  
+      --------------------------------------------------
+  [ 7/10]    0.0ms - Q: How long does it take to reach Pacific Mall from 222 Rajpur?  
+      --------------------------------------------------
+  [ 8/10]    0.0ms - Q: How many Townhouse units are available at 222 Rajpur?
+      --------------------------------------------------
+  [ 9/10]    0.0ms - Q: Does the Townhouse at 222 Rajpur include a sky court?
+      --------------------------------------------------
+  [10/10]    1.3ms - Q: What is the plot size range for Courtyard Villas at 222 Rajpur?
+      --------------------------------------------------
+
+📊 RESULTS:
+  Average:  190.2ms
+  Median:   0.0ms
+  P95:      830.0ms
+  P99:      1178.7ms
+  Range:    0.0 - 1178.7ms
+
+⚡ STAGE BREAKDOWN:
+  total_search_ms...............  570.4ms ( 50.0%)
+  reranking_ms..................  482.5ms ( 42.3%)
+  vector_search_ms..............   86.4ms (  7.6%)
+  bm25_search_ms................    1.0ms (  0.1%)
+  score_fusion_ms...............    0.2ms (  0.0%)
+  cache_check_ms................    0.0ms (  0.0%)
+
+======================================================================
+📊 CONFIGURATION COMPARISON
+ 913.4ms      -170.6%
+No Reranking                     216.2ms   738.1ms       +12.6%
+No Rerank + No Cache             635.9ms   828.5ms      -156.9%
+Optimized (k=3)                  190.2ms   830.0ms       +23.1%
+
+======================================================================
+
+✅ Benchmark complete!
+
+Recommendation:
+  Best configuration: No Reranking
+  P95 latency: 738.1ms
+  Settings: Reranking=False, Cache=True, k=5

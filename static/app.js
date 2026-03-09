@@ -8,11 +8,11 @@ const metricsContainer = document.getElementById('metricsContainer');
 const resultsContainer = document.getElementById('resultsContainer');
 const resultsList = document.getElementById('resultsList');
 
-// Metrics
+// Metrics - CHANGED IDs to match updated HTML
 const searchLatency = document.getElementById('searchLatency');
-const llmLatency = document.getElementById('llmLatency');
+const llmLatency = document.getElementById('llmLatencyValue'); 
 const serverLatency = document.getElementById('serverLatency');
-const statusIndicator = document.getElementById('statusIndicator');
+const statusIndicator = document.getElementById('statusIndicatorValue'); 
 
 // Stats
 const totalChunks = document.getElementById('totalChunks');
@@ -148,8 +148,10 @@ async function performSearch() {
                             // Show results
                             showResults(resultsData);
                             
-                            // Update final metrics
+                            // CHANGED: Update final metrics accurately once stream is finished
                             const clientTime = performance.now() - startTime;
+                            const finalLlmTime = clientTime - searchTime; 
+                            showMetrics(searchTime, finalLlmTime, clientTime);
                             console.log(`Client total: ${clientTime.toFixed(0)}ms`);
                             
                         } else if (data.type === 'error') {

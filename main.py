@@ -267,6 +267,7 @@ async def query_documents(request: QueryRequest):
         # Build filter dict
         filter_dict = {"sector": request.sector} if request.sector else None
         
+        is_cache_hit = doc_system.cache.results_cache.get(request.question, request.k, filter_dict) is not None
         # Vector/Hybrid search
         search_start = time.time()
         results = doc_system.search_with_score(
@@ -295,7 +296,7 @@ async def query_documents(request: QueryRequest):
             'question': request.question,
             'total_latency': total_latency,
             'breakdown': breakdown,
-            'cache_hit': False, # Always false now
+            'cache_hit': is_cache_hit, 
             'timestamp': datetime.now().isoformat()
         })
         
@@ -326,9 +327,10 @@ async def query_stream(request: QueryRequest):
     
     # Perform search
     search_start = time.time()
+    search_k = max(request.k, 10)
     results = doc_system.hybrid_search(
         query=request.question,
-        k=request.k,
+        k=search_k,
         filter_dict=filter_dict
     )
     search_latency = (time.time() - search_start) * 1000
@@ -355,7 +357,7 @@ async def query_stream(request: QueryRequest):
             llm_result = doc_system.generate_answer_with_llm(
                 request.question,
                 results,
-                max_chunks=3,
+                max_chunks=5,
                 stream=True
             )
             
@@ -422,35 +424,51 @@ async def get_metrics():
 
 @app.post("/metrics/reset")
 async def reset_metrics():
-    """Reset performance metrics"""
     perf_tracker.reset()
-    query_cache.clear()
-    
-    return {
-        "status": "success",
-        "message": "Metrics and cache cleared"
-    }
+    doc_system.cache.clear_all()
+    return {"status": "success", "message": "Metrics and cache cleared"}
 
 
 @app.get("/cache/stats")
 async def get_cache_stats():
     """Get cache statistics"""
-    return {
-        "cache_size": len(query_cache),
-        "max_cache_size": MAX_CACHE_SIZE,
-        "cached_queries": list(query_cache.keys())
-    }
+    try:
+        stats = doc_system.get_cache_stats()
+        return {
+            "status": "success",
+            "cache_stats": stats
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.post("/cache/clear")
 async def clear_cache():
-    """Clear query cache"""
-    query_cache.clear()
-    return {
-        "status": "success",
-        "message": "Cache cleared"
-    }
+    """Clear all caches"""
+    try:
+        doc_system.cache.clear_all()
+        return {
+            "status": "success",
+            "message": "All caches cleared"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
+
+@app.get("/performance/breakdown")
+async def get_performance_breakdown():
+    """Get latency breakdown"""
+    try:
+        breakdown = doc_system.get_latency_breakdown()
+        cache_stats = doc_system.get_cache_stats()
+        
+        return {
+            "status": "success",
+            "latency_breakdown": breakdown,
+            "cache_stats": cache_stats
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/stats")
 async def get_stats():
